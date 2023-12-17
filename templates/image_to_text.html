@@ -1,0 +1,11 @@
+<!-- image_to_text.html -->
+<h2>Image to Text Generator</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Generate Text</button>
+</form>
+{% if image_text %}
+    <h3>Generated Text:</h3>
+    <p>{{ image_text }}</p>
+{% endif %}

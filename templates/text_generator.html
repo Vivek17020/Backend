@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Text Generator{% endblock %}
+
+{% block content %}
+  <h2>Text Generator</h2>
+  <form method="post">
+    {% csrf_token %}
+    <label for="product_title">Product Title:</label>
+    <input type="text" name="product_title" required>
+    <button type="submit">Generate Text</button>
+  </form>
+  {% if generated_text %}
+    <h3>Generated Product Description:</h3>
+    <p>{{ generated_text }}</p>
+  {% endif %}
+{% endblock %}
